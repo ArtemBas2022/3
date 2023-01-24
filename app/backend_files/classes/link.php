@@ -83,7 +83,7 @@
                 while(file_exists($_SERVER['DOCUMENT_ROOT'].self::SRC."/$short")){ // короткая ссылка
                     $short = $this->url.$this->randomURl(6).'.html';
                 }
-                array_push($data, array('url'=>$this->correctUrl, 'short'=>$this->url.$short, 'use'=>'0'));
+                array_push($data, array('id'=> $short, 'url'=>$this->correctUrl, 'short'=>$this->url.$short, 'use'=>'0'));
                 file_put_contents('data/links.txt', json_encode($data));
                 $this->createRedirectFile($short);
             }
