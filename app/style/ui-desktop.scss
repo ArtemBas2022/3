@@ -1,0 +1,60 @@
+
+.ui-desktop{
+    display: flex;
+    flex-direction: column;
+    max-height: 200px;
+    align-items:center;
+    padding-top: 30px;
+    margin-top: 30px;
+    overflow: auto;
+}
+.short-link{
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #202020;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    input{
+        width: 300px;
+        height: 40px;
+        font-size: 16px;
+        color: #202020;
+    }
+    button{
+        border-radius: 20px;
+        cursor: pointer;
+        border: none;
+        height: 40px;
+    }
+}
+.speaker{
+    position: relative;
+    div{
+        z-index: 1000;
+        position: absolute;
+        top: -100%;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: rgba(198, 216, 255, 1);
+        font-size: 14px;
+        &::after{
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: inherit;
+            position: absolute;
+            bottom: -10px;
+            left: calc((100% - 20px)/2);
+            transform: rotate(45deg);
+        }
+    }
+}
+.speaker-text{
+    display: none;
+}
+.speaker.active{
+    .speaker-text{
+        display: block;
+    }
+}
